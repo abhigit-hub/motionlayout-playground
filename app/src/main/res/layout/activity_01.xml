@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@id/root"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white"
+    app:layoutDescription="@xml/scene_01_first_stage"
+    app:showPaths="false">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <com.footinit.motionlayoutplayground.utils.RoundCornersImageView
+        android:id="@+id/ivStartTrack"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/avd_start_tracking" />
+
+    <com.footinit.motionlayoutplayground.utils.RoundCornersImageView
+        android:id="@+id/ivStopTrack"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/avd_stop_tracking" />
+
+    <TextView
+        android:id="@+id/tvStartTrack"
+        style="@style/TextStyle.Regular.Heading.Normal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tracking_started" />
+
+    <TextView
+        android:id="@+id/tvStopTrack"
+        style="@style/TextStyle.Regular.Heading.Normal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tracking_stopped" />
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/view_trigger"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:altSrc="@drawable/avd_location_end"
+        app:srcCompat="@drawable/avd_location_start" />
+
+    <com.rd.PageIndicatorView
+        android:id="@+id/pageIndicatorView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        app:piv_animationType="worm"
+        app:piv_count="2"
+        app:piv_padding="12dp"
+        app:piv_radius="5dp"
+        app:piv_select="1"
+        app:piv_selectedColor="@color/black_effective"
+        app:piv_unselectedColor="@color/light_gray" />
+
+    <View
+        android:id="@+id/layer"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginBottom="32dp"
+        android:background="@color/light_gray" />
+
+    <ImageView
+        android:id="@+id/ivSwipeRight"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:srcCompat="@drawable/avd_swipe_right" />
+
+    <ImageView
+        android:id="@+id/ivSwipeLeft"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:srcCompat="@drawable/avd_swipe_left" />
+
+    <Button
+        android:id="@+id/button_exit"
+        style="@style/Button.Primary"
+        android:padding="10.0dip"
+        android:text="@string/exit_trip_mode"
+        android:textAllCaps="true"
+        android:visibility="visible" />
+</androidx.constraintlayout.motion.widget.MotionLayout>

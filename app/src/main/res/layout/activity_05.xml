@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@id/root"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white"
+    app:layoutDescription="@xml/scene_05"
+    app:showPaths="true">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/view"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:altSrc="@drawable/vd_mode2"
+        app:srcCompat="@drawable/vd_mode1" />
+</androidx.constraintlayout.motion.widget.MotionLayout>

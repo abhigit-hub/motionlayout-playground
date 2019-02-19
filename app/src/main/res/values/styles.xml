@@ -1,0 +1,110 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/black</item>
+        <item name="android:textAppearance">@style/TextAppearance.Text.Regular</item>
+    </style>
+
+    <style name="TextStyle">
+        <item name="android:layout_marginTop">2dp</item>
+        <item name="android:layout_marginBottom">2dp</item>
+        <item name="android:layout_marginLeft">2dp</item>
+        <item name="android:layout_marginRight">2dp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="TextAppearance.Text.Regular" parent="android:TextAppearance">
+        <item name="fontPath">fonts/Google-Sans-Font/GoogleSans-Regular.ttf</item>
+    </style>
+
+    <style name="TextAppearance.Text.Bold" parent="android:TextAppearance">
+        <item name="fontPath">fonts/Google-Sans-Font/GoogleSans-Bold.ttf</item>
+    </style>
+
+    <style name="TextAppearance.Text.Light" parent="android:TextAppearance">
+        <item name="fontPath">fonts/Google-Sans-Font/GoogleSans-Medium.ttf</item>
+    </style>
+
+    <style name="TextAppearance.Text.Italic" parent="android:TextAppearance">
+        <item name="fontPath">fonts/Google-Sans-Font/GoogleSans-Italic.ttf</item>
+    </style>
+
+    <style name="TextStyle.Title" parent="TextStyle">
+        <item name="android:textAppearance">@style/TextAppearance.Text.Regular</item>
+    </style>
+
+    <style name="TextStyle.Title.Sub" parent="TextStyle.Title">
+        <item name="android:textAppearance">@style/TextAppearance.Text.Light</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="TextStyle.Bold.Heading.Smaller" parent="TextStyle">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textAppearance">@style/TextAppearance.Text.Bold</item>
+    </style>
+
+    <style name="TextStyle.Bold.Heading.Small" parent="TextStyle">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textAppearance">@style/TextAppearance.Text.Bold</item>
+    </style>
+
+    <style name="TextStyle.Bold.Heading.Normal" parent="TextStyle">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textAppearance">@style/TextAppearance.Text.Bold</item>
+    </style>
+
+    <style name="TextStyle.Bold.Heading.Big" parent="TextStyle">
+        <item name="android:textSize">28sp</item>
+        <item name="android:textAppearance">@style/TextAppearance.Text.Bold</item>
+    </style>
+
+    <style name="TextStyle.Bold.Heading.Biggest" parent="TextStyle">
+        <item name="android:textSize">40sp</item>
+        <item name="android:textAppearance">@style/TextAppearance.Text.Bold</item>
+    </style>
+
+    <style name="TextStyle.Regular.Heading.Smaller" parent="TextStyle">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textAppearance">@style/TextAppearance.Text.Regular</item>
+    </style>
+
+    <style name="TextStyle.Regular.Heading.Small" parent="TextStyle">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textAppearance">@style/TextAppearance.Text.Regular</item>
+    </style>
+
+    <style name="TextStyle.Regular.Heading.Normal" parent="TextStyle">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textAppearance">@style/TextAppearance.Text.Regular</item>
+    </style>
+
+    <style name="TextStyle.Regular.Heading.Big" parent="TextStyle">
+        <item name="android:textSize">28sp</item>
+        <item name="android:textAppearance">@style/TextAppearance.Text.Regular</item>
+    </style>
+
+    <style name="TextStyle.Regular.Heading.Biggest" parent="TextStyle">
+        <item name="android:textSize">40sp</item>
+        <item name="android:textAppearance">@style/TextAppearance.Text.Regular</item>
+    </style>
+
+    <style name="Button" parent="Widget.AppCompat.Button">
+        <item name="android:layout_height">48dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:paddingLeft">8dp</item>
+        <item name="android:paddingRight">8dp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:foreground">?selectableItemBackground</item>
+    </style>
+
+    <style name="Button.Primary" parent="Button">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:background">@drawable/bt_shape</item>
+    </style>
+
+</resources>

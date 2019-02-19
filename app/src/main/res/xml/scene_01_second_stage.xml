@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        app:constraintSetEnd="@+id/end"
+        app:constraintSetStart="@+id/start"
+        app:duration="1000">
+        <OnSwipe
+            app:dragDirection="dragRight"
+            app:touchAnchorId="@+id/view_trigger"
+            app:touchAnchorSide="right" />
+
+        <KeyFrameSet>
+            <!--START-->
+            <KeyAttribute
+                android:scaleX="0.5"
+                android:scaleY="0.5"
+                app:framePosition="50"
+                app:target="@id/ivStartTrack" />
+
+            <KeyPosition
+                app:framePosition="50"
+                app:keyPositionType="parentRelative"
+                app:percentY="0.15"
+                app:target="@id/ivStartTrack" />
+
+            <KeyAttribute
+                android:scaleX="0.5"
+                android:scaleY="0.5"
+                app:framePosition="50"
+                app:target="@id/tvStartTrack" />
+
+            <KeyPosition
+                app:framePosition="50"
+                app:keyPositionType="parentRelative"
+                app:percentY="0.5"
+                app:target="@id/tvStartTrack" />
+
+
+            <!--STOP-->
+            <KeyAttribute
+                android:scaleX="0.5"
+                android:scaleY="0.5"
+                app:framePosition="50"
+                app:target="@id/ivStopTrack" />
+
+            <KeyPosition
+                app:framePosition="50"
+                app:keyPositionType="parentRelative"
+                app:percentY="0.5"
+                app:target="@id/ivStopTrack" />
+
+            <KeyAttribute
+                android:scaleX="0.5"
+                android:scaleY="0.5"
+                app:framePosition="50"
+                app:target="@id/tvStopTrack" />
+
+            <KeyPosition
+                app:framePosition="50"
+                app:keyPositionType="parentRelative"
+                app:percentY="0.5"
+                app:target="@id/tvStopTrack" />
+        </KeyFrameSet>
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Constraint
+            android:id="@+id/ivStartTrack"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_marginStart="64dp"
+            android:layout_marginTop="48dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+        <Constraint
+            android:id="@+id/ivStopTrack"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+        <Constraint
+            android:id="@+id/view_trigger"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/pageIndicatorView"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <CustomAttribute
+                app:attributeName="crossfade"
+                app:customFloatValue="1" />
+        </Constraint>
+
+        <Constraint
+            android:id="@+id/pageIndicatorView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/button_exit"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Constraint
+            android:id="@+id/layer"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginBottom="32dp"
+            app:layout_constraintBottom_toTopOf="@+id/button_exit"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <PropertySet app:alpha="0.4" />
+        </Constraint>
+
+        <Constraint
+            android:id="@+id/ivSwipeRight"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/layer"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/layer">
+
+            <PropertySet app:alpha="0" />
+        </Constraint>
+
+        <Constraint
+            android:id="@+id/ivSwipeLeft"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/layer"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/layer">
+
+            <PropertySet app:alpha="1" />
+        </Constraint>
+
+        <Constraint
+            android:id="@+id/button_exit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Constraint
+            android:id="@+id/tvStartTrack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="@+id/ivStartTrack"
+            app:layout_constraintHorizontal_bias="0.35"
+            app:layout_constraintStart_toStartOf="@+id/ivStartTrack"
+            app:layout_constraintTop_toBottomOf="@+id/ivStartTrack">
+
+            <PropertySet app:alpha="1" />
+        </Constraint>
+
+        <Constraint
+            android:id="@+id/tvStopTrack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="@+id/ivStopTrack"
+            app:layout_constraintStart_toStartOf="@+id/ivStopTrack"
+            app:layout_constraintTop_toBottomOf="@+id/ivStopTrack">
+
+            <PropertySet app:alpha="0" />
+        </Constraint>
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Constraint
+            android:id="@+id/ivStartTrack"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+        <Constraint
+            android:id="@+id/ivStopTrack"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_marginStart="64dp"
+            android:layout_marginTop="48dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+        <Constraint
+            android:id="@+id/view_trigger"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/pageIndicatorView"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <CustomAttribute
+                app:attributeName="crossfade"
+                app:customFloatValue="0" />
+        </Constraint>
+
+        <Constraint
+            android:id="@+id/pageIndicatorView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/button_exit"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Constraint
+            android:id="@+id/layer"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginBottom="32dp"
+            app:layout_constraintBottom_toTopOf="@+id/button_exit"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <PropertySet app:alpha="0.4" />
+        </Constraint>
+
+        <Constraint
+            android:id="@+id/ivSwipeRight"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/layer"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/layer">
+
+            <PropertySet app:alpha="1" />
+        </Constraint>
+
+        <Constraint
+            android:id="@+id/ivSwipeLeft"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/layer"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/layer">
+
+            <PropertySet app:alpha="0" />
+        </Constraint>
+
+        <Constraint
+            android:id="@+id/button_exit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Constraint
+            android:id="@+id/tvStartTrack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="@+id/ivStartTrack"
+            app:layout_constraintStart_toStartOf="@+id/ivStartTrack"
+            app:layout_constraintTop_toBottomOf="@+id/ivStartTrack">
+
+            <PropertySet app:alpha="0" />
+        </Constraint>
+
+        <Constraint
+            android:id="@+id/tvStopTrack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="@+id/ivStopTrack"
+            app:layout_constraintHorizontal_bias="0.35"
+            app:layout_constraintStart_toStartOf="@+id/ivStopTrack"
+            app:layout_constraintTop_toBottomOf="@+id/ivStopTrack">
+
+            <PropertySet app:alpha="1" />
+        </Constraint>
+    </ConstraintSet>
+</MotionScene>
