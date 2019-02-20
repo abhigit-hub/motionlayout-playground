@@ -6,7 +6,7 @@
     android:layout_height="fill_parent"
     android:background="@color/white"
     app:layoutDescription="@xml/scene_01_first_stage"
-    app:showPaths="false">
+    app:showPaths="true">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"

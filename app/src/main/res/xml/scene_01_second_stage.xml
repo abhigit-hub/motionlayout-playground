@@ -22,7 +22,7 @@
             <KeyPosition
                 app:framePosition="50"
                 app:keyPositionType="parentRelative"
-                app:percentY="0.15"
+                app:percentY="0.5"
                 app:target="@id/ivStartTrack" />
 
             <KeyAttribute
@@ -34,7 +34,7 @@
             <KeyPosition
                 app:framePosition="50"
                 app:keyPositionType="parentRelative"
-                app:percentY="0.5"
+                app:percentY="0.65"
                 app:target="@id/tvStartTrack" />
 
 
@@ -48,7 +48,7 @@
             <KeyPosition
                 app:framePosition="50"
                 app:keyPositionType="parentRelative"
-                app:percentY="0.5"
+                app:percentY="0.7"
                 app:target="@id/ivStopTrack" />
 
             <KeyAttribute
@@ -60,7 +60,7 @@
             <KeyPosition
                 app:framePosition="50"
                 app:keyPositionType="parentRelative"
-                app:percentY="0.5"
+                app:percentY="0.65"
                 app:target="@id/tvStopTrack" />
         </KeyFrameSet>
     </Transition>
