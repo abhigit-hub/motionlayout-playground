@@ -9,24 +9,24 @@ My space to play around with the Motion Layout API
 ## Glimpse
 
 ##### 1. **Move-All-Views (ImageFilter, PropertySet, KeyFrameSet)**  
-![](https://imgur.com/9hw07yD.gif)
+![](https://imgur.com/Xj8M7Ao.gif)
 
 ##### 2. **Move-A-View (In Progress)**  
 
 ##### 3. **Move-A-View (Constraints in two layout files)**  
-![](https://imgur.com/9hUdzRZ.gif)
+![](https://imgur.com/rUkDwq2.gif)
 
 ##### 4. **Move-A-View (Constraints in motion-scene file)**  
-![](https://imgur.com/GhhK6IS.gif)
+![](https://imgur.com/riqXRqz.gif)
 
 ##### 5. **Move-A-View (ImageFilter)**  
-![](https://imgur.com/cN1uQ9J.gif)
+![](https://imgur.com/c30X77g.gif)
 
 ##### 6. **Move-A-View (Toggle Alpha using PropertySet)**  
-![](https://imgur.com/5BH83dT.gif)
+![](https://imgur.com/v3CUUXN.gif)
 
 ##### 7 . **Move-A-View (Arc Motion using KeyFrame)**  
-![](https://imgur.com/8TH1a8i.gif)
+![](https://imgur.com/2FbHw1i.gif)
 
 
 ## Highly Recommended Materials
