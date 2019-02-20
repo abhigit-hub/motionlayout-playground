@@ -9,7 +9,7 @@ My space to play around with the Motion Layout API
 ## Glimpse
 
 ##### 1. **Move-All-Views (ImageFilter, PropertySet, KeyFrameSet)**  
-![](https://imgur.com/Xj8M7Ao.gif)
+![](https://imgur.com/0fsrif2.gif)
 
 ##### 2. **Move-A-View (In Progress)**  
 
