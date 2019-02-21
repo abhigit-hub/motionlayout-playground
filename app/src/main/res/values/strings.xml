@@ -4,6 +4,9 @@
     <string name="exit_trip_mode">Exit Trip Mode</string>
     <string name="tracking_started">Tracking Mode : ON</string>
     <string name="tracking_stopped">Tracking Mode : OFF</string>
+    <string name="view_trips">View Trips</string>
+    <string name="proceed">Proceed</string>
+    <string name="trip_mode">Trip Mode</string>
 
     <string-array name="colors">
         <item>#F06423</item>
