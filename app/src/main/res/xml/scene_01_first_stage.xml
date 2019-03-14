@@ -69,7 +69,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="16dp"
-            app:layout_constraintBottom_toTopOf="@+id/button_exit"
+            app:layout_constraintBottom_toTopOf="@+id/buttonExit"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
@@ -78,7 +78,7 @@
             android:layout_width="match_parent"
             android:layout_height="80dp"
             android:layout_marginBottom="32dp"
-            app:layout_constraintBottom_toTopOf="@+id/button_exit"
+            app:layout_constraintBottom_toTopOf="@+id/buttonExit"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent">
 
@@ -110,7 +110,7 @@
         </Constraint>
 
         <Constraint
-            android:id="@+id/button_exit"
+            android:id="@+id/buttonExit"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -194,7 +194,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="16dp"
-            app:layout_constraintBottom_toTopOf="@+id/button_exit"
+            app:layout_constraintBottom_toTopOf="@+id/buttonExit"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
@@ -203,7 +203,7 @@
             android:layout_width="match_parent"
             android:layout_height="80dp"
             android:layout_marginBottom="32dp"
-            app:layout_constraintBottom_toTopOf="@+id/button_exit"
+            app:layout_constraintBottom_toTopOf="@+id/buttonExit"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent">
 
@@ -235,7 +235,7 @@
         </Constraint>
 
         <Constraint
-            android:id="@+id/button_exit"
+            android:id="@+id/buttonExit"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"

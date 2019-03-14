@@ -1,4 +1,7 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion 28
@@ -20,8 +23,8 @@ android {
         }
     }
     compileOptions {
-        targetCompatibility 1.8
-        sourceCompatibility 1.8
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 }
 
@@ -32,14 +35,14 @@ dependencies {
 
     implementation 'androidx.recyclerview:recyclerview:1.1.0-alpha02'
     implementation 'androidx.cardview:cardview:1.0.0'
-    implementation 'com.google.android.material:material:1.1.0-alpha03'
+    implementation 'com.google.android.material:material:1.1.0-alpha04'
     implementation 'androidx.vectordrawable:vectordrawable:1.0.1'
     implementation 'androidx.vectordrawable:vectordrawable-animated:1.1.0-alpha01'
 
     implementation 'uk.co.chrisjenx:calligraphy:2.2.0'
 
-    implementation 'com.jakewharton:butterknife:10.0.0'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:10.0.0'
+    implementation 'com.jakewharton:butterknife:10.1.0'
+    kapt 'com.jakewharton:butterknife-compiler:10.1.0'
 
     implementation 'com.android.support:multidex:1.0.3'
 
@@ -49,4 +52,6 @@ dependencies {
 
     // Page Indicator
     implementation 'com.romandanylyk:pageindicatorview:1.0.3'
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }

@@ -81,7 +81,7 @@
         app:srcCompat="@drawable/avd_swipe_left" />
 
     <Button
-        android:id="@+id/button_exit"
+        android:id="@+id/buttonExit"
         style="@style/Button.Primary"
         android:padding="10.0dip"
         android:text="@string/exit_trip_mode"

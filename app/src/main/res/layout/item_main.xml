@@ -41,11 +41,11 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvBrief"
+                app:layout_constraintTop_toBottomOf="@+id/tvTitle"
                 tools:text="Move view end to end (constraints in two layout files)" />
 
             <TextView
-                android:id="@+id/tvBrief"
+                android:id="@+id/tvTitle"
                 style="@style/TextStyle.Regular.Heading.Biggest"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
