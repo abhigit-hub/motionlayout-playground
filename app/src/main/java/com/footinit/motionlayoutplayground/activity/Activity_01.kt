@@ -10,12 +10,13 @@ import androidx.constraintlayout.motion.widget.MotionLayout
 import androidx.vectordrawable.graphics.drawable.Animatable2Compat
 import androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat
 import com.footinit.motionlayoutplayground.R
+import com.footinit.motionlayoutplayground.databinding.Activity01Binding
 import com.footinit.motionlayoutplayground.extensions.showToast
 import com.footinit.motionlayoutplayground.utils.AppConstants
-import kotlinx.android.synthetic.main.activity_01.*
-import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper
 
 class Activity_01 : AppCompatActivity() {
+
+    private lateinit var binding: Activity01Binding
 
     companion object {
         val TAG = Activity_01::class.java.simpleName
@@ -39,7 +40,9 @@ class Activity_01 : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_01)
+        binding = Activity01Binding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
 
         setUpToolbar()
 
@@ -49,7 +52,7 @@ class Activity_01 : AppCompatActivity() {
     }
 
     private fun initClickListeners() {
-        buttonExit.setOnClickListener {
+        binding.buttonExit.setOnClickListener {
             if (CURRENT_MODE == AppConstants.MODE_TRACKING_STARTED) {
                 applicationContext.showToast("Stop the trip before exiting Trip Mode")
             } else {
@@ -59,7 +62,7 @@ class Activity_01 : AppCompatActivity() {
     }
 
     private fun setUpToolbar() {
-        setSupportActionBar(toolbar)
+        setSupportActionBar(binding.toolbar)
         supportActionBar?.let {
             it.setHomeButtonEnabled(true)
             it.setDisplayHomeAsUpEnabled(true)
@@ -69,9 +72,9 @@ class Activity_01 : AppCompatActivity() {
 
     private fun initTrackingState() {
         if (CURRENT_MODE == AppConstants.MODE_TRACKING_STARTED) {
-            root.loadLayoutDescription(R.xml.scene_01_second_stage)
-            root.setTransition(R.id.start, R.id.end)
-            root.transitionToStart()
+            binding.root.loadLayoutDescription(R.xml.scene_01_second_stage)
+            binding.root.setTransition(R.id.start, R.id.end)
+            binding.root.transitionToStart()
             isFirstTransitionStateComplete = true
 
             updateAnimationState()
@@ -84,7 +87,7 @@ class Activity_01 : AppCompatActivity() {
 
     private fun setUpListenersForMotionLayout() {
 
-        root.setTransitionListener(object : MotionLayout.TransitionListener {
+        binding.root.setTransitionListener(object : MotionLayout.TransitionListener {
             override fun onTransitionTrigger(p0: MotionLayout?, p1: Int, p2: Boolean, p3: Float) {}
 
             override fun onTransitionStarted(p0: MotionLayout?, p1: Int, p2: Int) {}
@@ -135,7 +138,7 @@ class Activity_01 : AppCompatActivity() {
             return
 
         CURRENT_MODE = AppConstants.MODE_TRACKING_STARTED
-        pageIndicatorView.setSelected(0)
+        //binding.pageIndicatorView.setSelected(0)
 
         updateAnimationState()
     }
@@ -145,7 +148,7 @@ class Activity_01 : AppCompatActivity() {
             return
 
         CURRENT_MODE = AppConstants.MODE_TRACKING_STOPPED
-        pageIndicatorView.setSelected(1)
+        //pageIndicatorView.setSelected(1)
 
         updateAnimationState()
     }
@@ -188,12 +191,12 @@ class Activity_01 : AppCompatActivity() {
 
         avdStart?.registerAnimationCallback(object : Animatable2Compat.AnimationCallback() {
             override fun onAnimationEnd(drawable: Drawable?) {
-                ivStartTrack.post {
+                binding.ivStartTrack.post {
                     avdStart?.start()
                 }
             }
         })
-        ivStartTrack.setImageDrawable(avdStart)
+        binding.ivStartTrack.setImageDrawable(avdStart)
         avdStart?.start()
     }
 
@@ -210,12 +213,12 @@ class Activity_01 : AppCompatActivity() {
 
         avdStop?.registerAnimationCallback(object : Animatable2Compat.AnimationCallback() {
             override fun onAnimationEnd(drawable: Drawable?) {
-                ivStopTrack.post {
+                binding.ivStopTrack.post {
                     avdStop?.start()
                 }
             }
         })
-        ivStopTrack.setImageDrawable(avdStop)
+        binding.ivStopTrack.setImageDrawable(avdStop)
         avdStop?.start()
     }
 
@@ -232,12 +235,12 @@ class Activity_01 : AppCompatActivity() {
 
         avdSwipeLeft?.registerAnimationCallback(object : Animatable2Compat.AnimationCallback() {
             override fun onAnimationEnd(drawable: Drawable?) {
-                ivSwipeLeft.post {
+                binding.ivSwipeLeft.post {
                     avdSwipeLeft?.start()
                 }
             }
         })
-        ivSwipeLeft.setImageDrawable(avdSwipeLeft)
+        binding.ivSwipeLeft.setImageDrawable(avdSwipeLeft)
         avdSwipeLeft?.start()
     }
 
@@ -254,12 +257,12 @@ class Activity_01 : AppCompatActivity() {
 
         avdSwipeRight?.registerAnimationCallback(object : Animatable2Compat.AnimationCallback() {
             override fun onAnimationEnd(drawable: Drawable?) {
-                ivSwipeRight.post {
+                binding.ivSwipeRight.post {
                     avdSwipeRight?.start()
                 }
             }
         })
-        ivSwipeRight.setImageDrawable(avdSwipeRight)
+        binding.ivSwipeRight.setImageDrawable(avdSwipeRight)
         avdSwipeRight?.start()
     }
 
@@ -270,17 +273,13 @@ class Activity_01 : AppCompatActivity() {
         }
     }
 
-    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-        when (item?.itemId) {
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
             android.R.id.home -> {
                 onBackPressed()
-                return true
+                true
             }
-            else -> return super.onOptionsItemSelected(item)
+            else -> super.onOptionsItemSelected(item)
         }
-    }
-
-    override fun attachBaseContext(newBase: Context?) {
-        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase))
     }
 }

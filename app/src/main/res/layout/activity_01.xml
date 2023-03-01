@@ -48,7 +48,7 @@
         app:altSrc="@drawable/avd_location_end"
         app:srcCompat="@drawable/avd_location_start" />
 
-    <com.rd.PageIndicatorView
+<!--    <com.rd.PageIndicatorView
         android:id="@+id/pageIndicatorView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -59,7 +59,7 @@
         app:piv_radius="5dp"
         app:piv_select="1"
         app:piv_selectedColor="@color/black_effective"
-        app:piv_unselectedColor="@color/light_gray" />
+        app:piv_unselectedColor="@color/light_gray" />-->
 
     <View
         android:id="@+id/layer"

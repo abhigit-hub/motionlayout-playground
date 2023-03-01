@@ -16,7 +16,7 @@
                 motion:framePosition="20"
                 motion:keyPositionType="parentRelative"
                 motion:percentX="0.5"
-                motion:target="@+id/view" />
+                motion:motionTarget="@+id/view" />
         </KeyFrameSet>
     </Transition>
 

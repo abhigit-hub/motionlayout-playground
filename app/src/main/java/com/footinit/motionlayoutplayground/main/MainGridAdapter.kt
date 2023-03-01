@@ -5,8 +5,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.footinit.motionlayoutplayground.R
+import com.footinit.motionlayoutplayground.databinding.ItemMainBinding
 import com.footinit.motionlayoutplayground.model.CustomModel
-import kotlinx.android.synthetic.main.item_main.view.*
 
 class MainGridAdapter(private var callback: Callback?, val list: ArrayList<CustomModel>) :
         RecyclerView.Adapter<MainGridAdapter.MainViewHolder>() {
@@ -20,10 +20,7 @@ class MainGridAdapter(private var callback: Callback?, val list: ArrayList<Custo
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainViewHolder {
-        return MainViewHolder(
-                LayoutInflater
-                        .from(parent.context)
-                        .inflate(R.layout.item_main, parent, false))
+        return MainViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_main, parent, false))
     }
 
     override fun getItemCount(): Int = list.size
@@ -40,12 +37,15 @@ class MainGridAdapter(private var callback: Callback?, val list: ArrayList<Custo
     }
 
     inner class MainViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        fun onBind(model: CustomModel) {
-            itemView.tvTitle.setText(model.title)
-            itemView.tvDescription.setText(model.description)
-            itemView.cvItem.setCardBackgroundColor(model.colorCode)
 
-            itemView.cvItem.setOnClickListener {
+        private val binding = ItemMainBinding.bind(itemView)
+
+        fun onBind(model: CustomModel) {
+            binding.tvTitle.text = model.title
+            binding.tvDescription.text = model.description
+            binding.cvItem.setCardBackgroundColor(model.colorCode)
+
+            binding.cvItem.setOnClickListener {
                 callback?.onItemSelected(position + 1, model.title + " - " + model.description)
             }
         }

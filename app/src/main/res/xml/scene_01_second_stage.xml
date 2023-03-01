@@ -17,25 +17,25 @@
                 android:scaleX="0.5"
                 android:scaleY="0.5"
                 app:framePosition="50"
-                app:target="@id/ivStartTrack" />
+                app:motionTarget="@id/ivStartTrack" />
 
             <KeyPosition
                 app:framePosition="50"
                 app:keyPositionType="parentRelative"
                 app:percentY="0.5"
-                app:target="@id/ivStartTrack" />
+                app:motionTarget="@id/ivStartTrack" />
 
             <KeyAttribute
                 android:scaleX="0.5"
                 android:scaleY="0.5"
                 app:framePosition="50"
-                app:target="@id/tvStartTrack" />
+                app:motionTarget="@id/tvStartTrack" />
 
             <KeyPosition
                 app:framePosition="50"
                 app:keyPositionType="parentRelative"
                 app:percentY="0.65"
-                app:target="@id/tvStartTrack" />
+                app:motionTarget="@id/tvStartTrack" />
 
 
             <!--STOP-->
@@ -43,25 +43,25 @@
                 android:scaleX="0.5"
                 android:scaleY="0.5"
                 app:framePosition="50"
-                app:target="@id/ivStopTrack" />
+                app:motionTarget="@id/ivStopTrack" />
 
             <KeyPosition
                 app:framePosition="50"
                 app:keyPositionType="parentRelative"
                 app:percentY="0.7"
-                app:target="@id/ivStopTrack" />
+                app:motionTarget="@id/ivStopTrack" />
 
             <KeyAttribute
                 android:scaleX="0.5"
                 android:scaleY="0.5"
                 app:framePosition="50"
-                app:target="@id/tvStopTrack" />
+                app:motionTarget="@id/tvStopTrack" />
 
             <KeyPosition
                 app:framePosition="50"
                 app:keyPositionType="parentRelative"
                 app:percentY="0.65"
-                app:target="@id/tvStopTrack" />
+                app:motionTarget="@id/tvStopTrack" />
         </KeyFrameSet>
     </Transition>
 

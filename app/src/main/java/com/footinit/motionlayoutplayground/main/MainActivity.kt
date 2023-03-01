@@ -1,6 +1,5 @@
 package com.footinit.motionlayoutplayground.main
 
-import android.content.Context
 import android.graphics.Color
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -8,12 +7,13 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.footinit.motionlayoutplayground.R
 import com.footinit.motionlayoutplayground.activity.*
+import com.footinit.motionlayoutplayground.databinding.ActivityMainBinding
 import com.footinit.motionlayoutplayground.extensions.showToast
 import com.footinit.motionlayoutplayground.model.CustomModel
-import kotlinx.android.synthetic.main.activity_main.*
-import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper
 
 class MainActivity : AppCompatActivity(), MainGridAdapter.Callback {
+
+    private lateinit var binding: ActivityMainBinding
 
     lateinit var adapter: MainGridAdapter
 
@@ -22,7 +22,9 @@ class MainActivity : AppCompatActivity(), MainGridAdapter.Callback {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
 
         colors = resources.getStringArray(R.array.colors)
 
@@ -32,7 +34,7 @@ class MainActivity : AppCompatActivity(), MainGridAdapter.Callback {
     }
 
     private fun setUpToolbar() {
-        setSupportActionBar(toolbar)
+        setSupportActionBar(binding.toolbar)
         supportActionBar?.setTitle(R.string.app_name)
     }
 
@@ -40,8 +42,8 @@ class MainActivity : AppCompatActivity(), MainGridAdapter.Callback {
         adapter = MainGridAdapter(this@MainActivity, prepareList())
         val layoutManager = GridLayoutManager(applicationContext, 2)
         layoutManager.orientation = RecyclerView.VERTICAL
-        rvMain.layoutManager = layoutManager
-        rvMain.adapter = adapter
+        binding.rvMain.layoutManager = layoutManager
+        binding.rvMain.adapter = adapter
     }
 
     private fun prepareList(): ArrayList<CustomModel> {
@@ -73,10 +75,6 @@ class MainActivity : AppCompatActivity(), MainGridAdapter.Callback {
             6 -> startActivity(Activity_06.getStartIntent(applicationContext, message))
             7 -> startActivity(Activity_07.getStartIntent(applicationContext, message))
         }
-    }
-
-    override fun attachBaseContext(newBase: Context?) {
-        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase))
     }
 
     override fun onResume() {

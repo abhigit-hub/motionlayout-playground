@@ -5,14 +5,13 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
-import com.footinit.motionlayoutplayground.R
-import kotlinx.android.synthetic.main.activity_07.*
-import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper
+import com.footinit.motionlayoutplayground.databinding.Activity07Binding
 
 class Activity_07 : AppCompatActivity() {
 
-    companion object {
+    private lateinit var binding: Activity07Binding
 
+    companion object {
         val TAG = Activity_07::class.java.simpleName
 
         val KEY_MESSAGE = "title"
@@ -26,13 +25,15 @@ class Activity_07 : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_07)
+        binding = Activity07Binding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
 
         setUpToolbar()
     }
 
     private fun setUpToolbar() {
-        setSupportActionBar(toolbar)
+        setSupportActionBar(binding.toolbar)
 
         supportActionBar?.let {
             it.setDisplayHomeAsUpEnabled(true)
@@ -41,17 +42,13 @@ class Activity_07 : AppCompatActivity() {
         }
     }
 
-    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-        when (item?.itemId) {
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
             android.R.id.home -> {
                 onBackPressed()
-                return true
+                true
             }
-            else -> return super.onOptionsItemSelected(item)
+            else -> super.onOptionsItemSelected(item)
         }
-    }
-
-    override fun attachBaseContext(newBase: Context?) {
-        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase))
     }
 }
