@@ -1,4 +1,4 @@
-package com.footinit.motionlayoutplayground.main
+package com.footinit.motionlayoutplayground.ui.main
 
 import android.view.LayoutInflater
 import android.view.View
@@ -8,8 +8,9 @@ import com.footinit.motionlayoutplayground.R
 import com.footinit.motionlayoutplayground.databinding.ItemMainBinding
 import com.footinit.motionlayoutplayground.model.CustomModel
 
-class MainGridAdapter(private var callback: Callback?, val list: ArrayList<CustomModel>) :
+class MainGridAdapter(private var callback: Callback?) :
         RecyclerView.Adapter<MainGridAdapter.MainViewHolder>() {
+    private val customModelList = mutableListOf<CustomModel>()
 
     fun setCallback(callback: Callback) {
         this.callback = callback
@@ -23,12 +24,12 @@ class MainGridAdapter(private var callback: Callback?, val list: ArrayList<Custo
         return MainViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_main, parent, false))
     }
 
-    override fun getItemCount(): Int = list.size
+    override fun getItemCount(): Int = customModelList.size
 
-    override fun onBindViewHolder(holder: MainViewHolder, position: Int) = holder.onBind(list[position])
+    override fun onBindViewHolder(holder: MainViewHolder, position: Int) = holder.onBind(customModelList[position])
 
     fun updateList(list: List<CustomModel>) {
-        this.list.addAll(list)
+        customModelList.addAll(list)
         notifyDataSetChanged()
     }
 

@@ -13,7 +13,7 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <activity
-            android:name=".main.MainActivity"
+            android:name=".ui.main.MainActivity"
             android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>
@@ -24,37 +24,37 @@
         </activity>
 
         <activity
-            android:name=".activity.Activity_01"
+            android:name=".ui.Activity_01"
             android:launchMode="standard"
             android:exported="true"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".activity.Activity_03"
+            android:name=".ui.Activity_03"
             android:launchMode="standard"
             android:exported="true"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".activity.Activity_04"
+            android:name=".ui.Activity_04"
             android:launchMode="standard"
             android:exported="true"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".activity.Activity_05"
+            android:name=".ui.Activity_05"
             android:launchMode="standard"
             android:exported="true"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".activity.Activity_06"
+            android:name=".ui.Activity_06"
             android:launchMode="standard"
             android:exported="true"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".activity.Activity_07"
+            android:name=".ui.Activity_07"
             android:launchMode="standard"
             android:exported="true"
             android:screenOrientation="portrait" />

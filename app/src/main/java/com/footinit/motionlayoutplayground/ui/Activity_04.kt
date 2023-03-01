@@ -1,22 +1,23 @@
-package com.footinit.motionlayoutplayground.activity
+package com.footinit.motionlayoutplayground.ui
 
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
-import com.footinit.motionlayoutplayground.databinding.Activity03Binding
+import com.footinit.motionlayoutplayground.databinding.Activity04Binding
 
-class Activity_03 : AppCompatActivity() {
-    private lateinit var binding: Activity03Binding
+class Activity_04 : AppCompatActivity() {
+
+    private lateinit var binding: Activity04Binding
 
     companion object {
-        val TAG = Activity_03::class.java.simpleName
+        val TAG = Activity_04::class.java.simpleName
 
         val KEY_MESSAGE = "title"
 
         fun getStartIntent(context: Context, message: String): Intent {
-            val intent = Intent(context, Activity_03::class.java)
+            val intent = Intent(context, Activity_04::class.java)
             intent.putExtra(KEY_MESSAGE, message)
             return intent
         }
@@ -24,7 +25,7 @@ class Activity_03 : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = Activity03Binding.inflate(layoutInflater)
+        binding = Activity04Binding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
 
@@ -33,7 +34,6 @@ class Activity_03 : AppCompatActivity() {
 
     private fun setUpToolbar() {
         setSupportActionBar(binding.toolbar)
-
         supportActionBar?.let {
             it.setHomeButtonEnabled(true)
             it.setDisplayHomeAsUpEnabled(true)

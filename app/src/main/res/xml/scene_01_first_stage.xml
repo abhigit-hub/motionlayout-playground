@@ -13,6 +13,16 @@
     </Transition>
 
     <ConstraintSet android:id="@+id/start">
+
+        <Constraint
+            android:id="@+id/tv_hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="@id/layer"
+            app:layout_constraintStart_toStartOf="@id/layer"
+            app:layout_constraintTop_toTopOf="@id/layer"
+            app:layout_constraintBottom_toBottomOf="@id/layer" />
+
         <Constraint
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
@@ -91,7 +101,7 @@
             android:layout_height="100dp"
             android:layout_marginEnd="8dp"
             app:layout_constraintBottom_toBottomOf="@+id/layer"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/layer"
             app:layout_constraintTop_toTopOf="@+id/layer">
 
             <PropertySet app:alpha="1" />
@@ -103,7 +113,7 @@
             android:layout_height="100dp"
             android:layout_marginStart="8dp"
             app:layout_constraintBottom_toBottomOf="@+id/layer"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/layer"
             app:layout_constraintTop_toTopOf="@+id/layer">
 
             <PropertySet app:alpha="0" />
@@ -216,7 +226,7 @@
             android:layout_height="100dp"
             android:layout_marginEnd="8dp"
             app:layout_constraintBottom_toBottomOf="@+id/layer"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/layer"
             app:layout_constraintTop_toTopOf="@+id/layer">
 
             <PropertySet app:alpha="0" />
@@ -228,7 +238,7 @@
             android:layout_height="100dp"
             android:layout_marginStart="8dp"
             app:layout_constraintBottom_toBottomOf="@+id/layer"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/layer"
             app:layout_constraintTop_toTopOf="@+id/layer">
 
             <PropertySet app:alpha="1" />

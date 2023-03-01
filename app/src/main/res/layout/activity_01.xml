@@ -48,19 +48,6 @@
         app:altSrc="@drawable/avd_location_end"
         app:srcCompat="@drawable/avd_location_start" />
 
-<!--    <com.rd.PageIndicatorView
-        android:id="@+id/pageIndicatorView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        app:piv_animationType="worm"
-        app:piv_count="2"
-        app:piv_padding="12dp"
-        app:piv_radius="5dp"
-        app:piv_select="1"
-        app:piv_selectedColor="@color/black_effective"
-        app:piv_unselectedColor="@color/light_gray" />-->
-
     <View
         android:id="@+id/layer"
         android:layout_width="match_parent"
@@ -68,16 +55,36 @@
         android:layout_marginBottom="32dp"
         android:background="@color/light_gray" />
 
-    <ImageView
+    <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/ivSwipeRight"
         android:layout_width="100dp"
         android:layout_height="100dp"
+        app:layout_constraintTop_toTopOf="@id/layer"
+        app:layout_constraintBottom_toBottomOf="@id/layer"
+        app:layout_constraintEnd_toEndOf="@id/layer"
         app:srcCompat="@drawable/avd_swipe_right" />
 
-    <ImageView
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_hint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/TextAppearance.Text.Italic"
+        android:textSize="24sp"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:text="Swipe here"
+        app:layout_constraintStart_toStartOf="@id/layer"
+        app:layout_constraintEnd_toEndOf="@id/layer"
+        app:layout_constraintTop_toTopOf="@id/layer"
+        app:layout_constraintBottom_toBottomOf="@id/layer" />
+
+    <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/ivSwipeLeft"
         android:layout_width="100dp"
         android:layout_height="100dp"
+        app:layout_constraintTop_toTopOf="@id/layer"
+        app:layout_constraintBottom_toBottomOf="@id/layer"
+        app:layout_constraintStart_toStartOf="@id/layer"
         app:srcCompat="@drawable/avd_swipe_left" />
 
     <Button

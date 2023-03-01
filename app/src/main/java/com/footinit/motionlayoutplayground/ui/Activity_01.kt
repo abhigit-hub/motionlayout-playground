@@ -1,4 +1,4 @@
-package com.footinit.motionlayoutplayground.activity
+package com.footinit.motionlayoutplayground.ui
 
 import android.content.Context
 import android.content.Intent
@@ -11,7 +11,7 @@ import androidx.vectordrawable.graphics.drawable.Animatable2Compat
 import androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat
 import com.footinit.motionlayoutplayground.R
 import com.footinit.motionlayoutplayground.databinding.Activity01Binding
-import com.footinit.motionlayoutplayground.extensions.showToast
+import com.footinit.motionlayoutplayground.ext.showToast
 import com.footinit.motionlayoutplayground.utils.AppConstants
 
 class Activity_01 : AppCompatActivity() {
@@ -66,7 +66,7 @@ class Activity_01 : AppCompatActivity() {
         supportActionBar?.let {
             it.setHomeButtonEnabled(true)
             it.setDisplayHomeAsUpEnabled(true)
-            it.setTitle(intent.getStringExtra(KEY_MESSAGE))
+            it.title = intent.getStringExtra(KEY_MESSAGE)
         }
     }
 

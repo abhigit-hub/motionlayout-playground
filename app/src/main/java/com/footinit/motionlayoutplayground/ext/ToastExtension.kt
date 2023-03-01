@@ -1,4 +1,4 @@
-package com.footinit.motionlayoutplayground.extensions
+package com.footinit.motionlayoutplayground.ext
 
 import android.content.Context
 import android.widget.Toast
