@@ -31,20 +31,9 @@ class MainActivity : AppCompatActivity(), MainGridAdapter.Callback {
         initObservers()
     }
 
-    private fun initObservers() {
-        mainViewModel.getCustomModelList().observe(this@MainActivity) {
-            adapter.updateList(it)
-        }
-    }
-
     private fun initViews() {
         ViewUtils.setUpColors(resources.getStringArray(R.array.colors))
         setUpToolbar()
-    }
-
-    private fun setUpToolbar() {
-        setSupportActionBar(binding.toolbar)
-        supportActionBar?.setTitle(R.string.app_name)
     }
 
     private fun setUpAdapter() {
@@ -53,6 +42,17 @@ class MainActivity : AppCompatActivity(), MainGridAdapter.Callback {
         layoutManager.orientation = RecyclerView.VERTICAL
         binding.rvMain.layoutManager = layoutManager
         binding.rvMain.adapter = adapter
+    }
+
+    private fun initObservers() {
+        mainViewModel.getCustomModelList().observe(this@MainActivity) {
+            adapter.updateList(it)
+        }
+    }
+
+    private fun setUpToolbar() {
+        setSupportActionBar(binding.toolbar)
+        supportActionBar?.setTitle(R.string.app_name)
     }
 
     override fun onItemSelected(id: Int, message: String) {
